@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Mike Keller
+  description: monero-node
+
+  license: license (MIT)
+
+  min_ansible_version: 2.4
+
+  platforms:
+   - name: Ubuntu
+     versions:
+     - Xenial
+
+  galaxy_tags: ['monero']
