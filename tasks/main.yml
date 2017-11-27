@@ -4,30 +4,28 @@
     name: bzip2
     state: present
 
-- name: Create the monero home directory
+- name: Create the monero data directory.
   file:
-    path: /opt/monero
+    path: /opt/monero-data/
     state: directory
     mode: 0755
 
-- name: Copy up monerod
-  copy:
-    src: monerod
-    dest: /opt/monero/monerod
-    owner: root
-    group: root
-    mode: 0755
+- name: Get the monero daemon.
+  unarchive:
+    src: "https://downloads.getmonero.org/cli/monero-linux-x64-{{ monero_node_version }}.tar.bz2"
+    dest: /opt/
+    remote_src: yes
 
-- name: Copy over the service file
+- name: Copy over the service file.
   template:
-    src: monero-node.service.j2
-    dest: /etc/systemd/system/monero-node.service
+    src: monerod.service.j2
+    dest: /etc/systemd/system/monerod.service
     owner: root
     group: root
     mode: 0644
 
-- name: Start the daemon
+- name: Start the daemon.
   systemd:
-    name: monero-node
+    name: monerod
     state: restarted
     daemon_reload: yes

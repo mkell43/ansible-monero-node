@@ -1,0 +1,12 @@
+[Unit]
+Description=Full Monero Node
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/monero-{{ monero_node_version }}
+ExecStart=/opt/monero-{{ monero_node_version }}/monerod --log-file /dev/null --data-dir /opt/monero-data --non-interactive --rpc-bind-ip {{ ansible_default_ipv4['address'] }} --rpc-bind-port 18089 --restricted-rpc --confirm-external-bind
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
