@@ -9,6 +9,6 @@ galaxy_info:
   platforms:
    - name: Ubuntu
      versions:
-     - Xenial
+     - xenial
 
   galaxy_tags: ['monero']
