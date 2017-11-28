@@ -31,3 +31,8 @@
     mode: 0644
   notify:
     - Restart monerod.
+
+- name: Ensure monerod started.
+  systemd:
+    name: monerod
+    state: started
