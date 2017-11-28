@@ -11,4 +11,5 @@ galaxy_info:
      versions:
      - xenial
 
-  galaxy_tags: ['monero']
+  galaxy_tags:
+    - 'monero'
