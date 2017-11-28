@@ -36,3 +36,4 @@
   systemd:
     name: monerod
     state: started
+    enabled: yes
