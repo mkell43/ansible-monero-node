@@ -10,11 +10,17 @@
     state: directory
     mode: 0755
 
+- name: Check if the monero daemon already exists.
+  stat:
+    path: "/opt/monero-{{ monero_node_version }}/monerod"
+  register: monero_daemon_status
+
 - name: Get the monero daemon.
   unarchive:
     src: "https://downloads.getmonero.org/cli/monero-linux-x64-{{ monero_node_version }}.tar.bz2"
     dest: /opt/
     remote_src: yes
+  when: monero_daemon_status.stat.exists == False
 
 - name: Copy over the service file.
   template:
@@ -23,9 +29,5 @@
     owner: root
     group: root
     mode: 0644
-
-- name: Start the daemon.
-  systemd:
-    name: monerod
-    state: restarted
-    daemon_reload: yes
+  notify:
+    - Restart monerod.
