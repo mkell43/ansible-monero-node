@@ -1,4 +1,4 @@
 ---
 monero_node_version: v0.12.0.0
 monero_data_dir: /opt/monero-data/
-monero_log_file: "{{ monero_data_dir }}/monerod.log"
+monero_log_file: "{{ monero_data_dir }}monerod.log"
