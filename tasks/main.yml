@@ -6,7 +6,7 @@
 
 - name: Create the monero data directory.
   file:
-    path: {{ monero_data_dir }}
+    path: "{{ monero_data_dir }}"
     state: directory
     mode: 0755
 
