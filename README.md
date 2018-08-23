@@ -25,7 +25,7 @@ Additional Information
 
 Find out more about monero at https://getmonero.org/ and https://moneroworld.com/.
 
-At this time, late November 2017, you will need a disk with around 30G free to run a full monero node.  I have one running on a VPS at [DigitalOcean](https://digitalocean.com) and another on [Vultr](https://vultr.com).
+At this time, August 2018, you will need a disk with around 60G free to run a full monero node.  I have one running on a VPS at [DigitalOcean](https://digitalocean.com) and another on [Vultr](https://vultr.com).
 
 If you would like to help me in keeping those running please feel free to donate a lil' or sign up with one of those hosting providers using a referral link below.
 
